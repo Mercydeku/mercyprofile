@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Marketplace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        section {
+            display: none;
+            padding: 20px;
+        }
+        .active {
+            display: block;
+        }
+        .artwork {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .artwork div {
+            margin: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: calc(33% - 40px);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            .artwork div {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+    <script>
+        function showTab(tabName) {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => section.classList.remove("active"));
+            document.getElementById(tabName).classList.add("active");
+        }
+    </script>
+</head>
+<body onload="showTab('home')">
+
+<header>
+    <h1>Art Marketplace</h1>
+    <nav>
+        <a onclick="showTab('home')">Home</a>
+        <a onclick="showTab('about')">About Us</a>
+        <a onclick="showTab('contact')">Contact Us</a>
+    </nav>
+</header>
+
+<section id="home" class="active">
+    <h2>Shop Our Artwork</h2>
+    <div class="artwork">
+        <div>
+            <img src="images/art1.png" alt="Art 1" style="width: 90%;height:80%;">
+            <h3>Artwork Title 1</h3>
+            <p>$100</p>
+            <button>Add to Cart</button>
+        </div>
+        <div>
+            <img src="images/art2.png" alt="Art 2" style="width:100%">
+            <h3>Artwork Title 2</h3>
+            <p>$150</p>
+            <button>Add to Cart</button>
+        </div>
+        <div>
+            <img src="images/art3.png" alt="Art 3" style="width:100%">
+            <h3>Artwoimages/art3.pngrk Title 3</h3>
+            <p>$200</p>
+            <a href="https://www.deviantart.com/"><button>Add to Cart</button></a>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Art Marketplace, where artists and art lovers connect.</p>
+    <p>Art marketplace is a website purposly designed to exhibit artworks for selling and buying at a cool price</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@artmarketplace.com</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Art Marketplace</p>
+</footer>
+
+</body>
+</html>
